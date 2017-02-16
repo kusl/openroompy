@@ -1,12 +1,15 @@
 from flask import Flask
 
+from Animal import Dog
+
 app = Flask(__name__)
 
 
 @app.route('/')
 def hello_world():
-    return 'Hello World!'
+    fido = Dog.Dog('Fido')
+    return fido.name
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
