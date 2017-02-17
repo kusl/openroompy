@@ -1,4 +1,4 @@
-class Dog:
+class Dog(object):
     kind = 'canine'
 
     def __init__(self, name):
