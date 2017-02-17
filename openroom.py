@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, url_for
 
 from User import User
 
@@ -17,6 +17,11 @@ def create_user():
     user = User()
     user.create(email=email, password=password)
     return jsonify(user.serialize()), 201
+
+
+@app.route('/css')
+def return_css():
+    return url_for('static', filename='style.css')
 
 
 if __name__ == '__main__':
