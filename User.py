@@ -15,9 +15,8 @@ class User(object):
 
     def create(self, password, email):
         self.id = uuid.uuid4()
-        self.set_password(self, password=password)
-        self.set_email(self, email=email)
-        return self
+        self.set_password(password=password)
+        self.set_email(email=email)
 
     def set_password(self, password):
         if len(password) >= User.MINIMUM_PASSWORD_LENGTH:

@@ -14,9 +14,9 @@ def hello_world():
 def create_user():
     email = request.json['email']
     password = request.json['password']
-    user = User
-    user.create(user, email=email, password=password)
-    return jsonify(user.serialize(user)), 201
+    user = User()
+    user.create(email=email, password=password)
+    return jsonify(user.serialize()), 201
 
 
 if __name__ == '__main__':
